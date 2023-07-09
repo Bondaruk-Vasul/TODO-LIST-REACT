@@ -42,10 +42,11 @@ const Home = () => {
                 </section>
             </main>
 
-            <footer className="footer">
+            <div className="footer">
                 <button onClick={() => setModalOpen(true)} id="go-to-create"><img className="icon-button" src={Add} alt="Plus" /></button>
-                <TodoModal modalOpen={modalOpen} setModalOpen={() => setModalOpen(false)} />
-            </footer>
+                <TodoModal type="add" modalOpen={modalOpen} setModalOpen={() => setModalOpen(false)} />
+            </div>
+            
         </div>
     );
 }

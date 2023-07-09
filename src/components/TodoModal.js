@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../slices/todoSlice';
+import { addTodo, updateTodo } from '../slices/todoSlice';
 import './TodoModal.css';
 import { v4 as uuid } from 'uuid';
 
 import Downtload from '../img/Downtload.png';
 
-function TodoModal({ modalOpen, setModalOpen }) {
+function TodoModal({ type, modalOpen, setModalOpen, todo }) {
     const [title, setTitle] = useState('');
     const [discription, setDiscription] = useState('');
     const [date, setDate] = useState('');
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (type === 'update' && todo) {
+            setTitle(todo.title);
+            setDiscription(todo.discription);
+            setDate(todo.date);
+        }
+    }, [type, todo, modalOpen]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (title === '') {
+            toast.error('Please enter a title.');
+            return;
+        }
         if (title && discription && date) {
+            if (type === 'add') {
             dispatch(
                 addTodo({
                     id: uuid(),
@@ -28,17 +41,23 @@ function TodoModal({ modalOpen, setModalOpen }) {
                 })
             );
             toast.success('Task added Successfully');
+            }
+            if (type === 'update') {
+                if (todo.title !== title || todo.date !== date || todo.discription !== discription ) {
+                    dispatch(updateTodo({ ...todo, title, date, discription }));
+                } else {
+                    toast.error('No Changes Made');
+                }
+            }
             setModalOpen(false);
-        } else {
-            toast.error("Title shouldn't be empty");
-        }
+         } 
     };
     return (
         modalOpen && (
             <div className='modal'>
                 <div className='wrapper'>
                     <header className="header-two">
-                        <button id="but">add task</button>
+                        <button id="but" onClick={handleSubmit}>{type === 'update' ? 'Edit' : 'Add'} task</button>
                         <button
                             id="create-close-button"
                             className="butt"
@@ -89,12 +108,12 @@ function TodoModal({ modalOpen, setModalOpen }) {
                     </main>
 
                     <footer className="basement-two">
-                        <button className="todo-btn" onClick={handleSubmit}>Add</button>
+                        <button className="todo-btn" onClick={handleSubmit}>{type === 'update' ? 'Done !' : 'Add'}</button>
                         <button className="basment-but-thre"
                             onClick={() => setModalOpen(false)}
                             onKeyDown={() => setModalOpen(false)}
                         >
-                            Cancel
+                            Cansel
                         </button>
                     </footer>
                 </div>
