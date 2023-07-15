@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,6 +16,10 @@ export const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
   const [date, setDate] = useState('');
   const dispatch = useDispatch();
 
+  const checkIfTodoWasUpdated = () => {
+    return todo.title !== title || todo.date !== date || todo.discription !== discription;
+  };
+
   useEffect(() => {
     if (type === 'update' && todo) {
       setTitle(todo.title);
@@ -27,25 +30,26 @@ export const TodoModal = ({ type, modalOpen, setModalOpen, todo }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     if (title === '') {
       toast.error('Please enter a title.');
       return;
     }
+
     if (title && discription && date) {
       if (type === 'add') {
         dispatch(
           addTodo({
-            id: uuid(),
             title,
             discription,
             date,
-            time: new Date().toLocaleDateString(),
           })
         );
+
         toast.success('Task added Successfully');
       }
       if (type === 'update') {
-        if (todo.title !== title || todo.date !== date || todo.discription !== discription) {
+        if (checkIfTodoWasUpdated()) {
           dispatch(updateTodo({ ...todo, title, date, discription }));
         } else {
           toast.error('No Changes Made');
