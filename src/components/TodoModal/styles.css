@@ -1,0 +1,146 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.basment-but-thre {
+  position: relative;
+  color: white;
+  background: red;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  left: 50%;
+  border-radius: 40px;
+  width: 150px;
+  height: 60px;
+}
+
+#but {
+  color: cornflowerblue;
+  border: none;
+  cursor: pointer;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  font-stretch: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: absolute;
+  height: 60px;
+  left: 2px;
+  top: 2px;
+}
+
+.butt {
+  color: cornflowerblue;
+  cursor: pointer;
+  border: none;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  font-stretch: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  height: 60px;
+  position: absolute;
+  right: 20px;
+  top: 2px;
+}
+
+.header-two {
+  position: relative;
+  padding: 30px;
+}
+
+.basic-page-create {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.basic-page-creat-two {
+  flex: 0.3;
+}
+
+.basic-page-creat-three {
+  flex: 0.3;
+}
+
+.basic-page-creat-four {
+  flex: 0.3;
+}
+
+.icon-loading-two {
+  top: 100px;
+  position: relative;
+  margin-left: 45%;
+  width: 100px;
+  height: 100px;
+}
+
+#new-task-form {
+  top: 30%;
+  margin-left: 25%;
+  position: absolute;
+}
+
+.discription {
+  font-size: 20px;
+  height: 60px;
+  width: 700px;
+  border-radius: 15px;
+  border: 2px solid cornflowerblue;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  font-size: 20px;
+  height: 60px;
+  width: 700px;
+  border-radius: 15px;
+  border: 2px solid cornflowerblue;
+  text-align: center;
+}
+
+.basement-two {
+  text-align: center;
+  padding: 100px;
+}
+
+.todo-btn {
+  position: relative;
+  color: white;
+  background: cornflowerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  right: 37px;
+  border-radius: 40px;
+  width: 150px;
+  height: 60px;
+}
+
+.basment-but-thre {
+  position: relative;
+  color: white;
+  background: red;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  left: 234px;
+  border-radius: 40px;
+  width: 150px;
+  height: 60px;
+}

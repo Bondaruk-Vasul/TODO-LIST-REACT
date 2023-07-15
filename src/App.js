@@ -1,19 +1,19 @@
 import React from 'react';
-import Home from './page/Home';
-
+import { ToastContainer } from 'react-toastify';
+import { TodoList } from './pages/TodoList';
 
 import './styles/main.css';
-import { ToastContainer } from 'react-toastify';
 
 function App() {
-    return (
-        <>
-            <div className='App'>
-                <Home />
-            </div>
-            <ToastContainer/>
-        </>
-    );
+  return (
+    <>
+      <div className="App">
+        <TodoList />
+      </div>
+
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;
