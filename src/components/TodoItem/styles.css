@@ -1,0 +1,45 @@
+.todo-date {
+  color: darkcyan;
+  left: 20px;
+  padding-left: 5%;
+}
+
+h5 {
+    padding-left: 7%;
+}
+
+.new-description {
+  text-align: right;
+  padding-left: 8%;
+}
+
+.icon-delete {
+  display: block;
+  font-size: 35px;
+  cursor: pointer;
+  color: rgb(4, 195, 200);
+}
+
+.icon-delete:hover {
+  color: red;
+}
+
+.icon-update {
+  cursor: pointer;
+  font-size: 25px;
+  color: green;
+}
+
+.icon-update:hover {
+  color: red;
+}
+
+.checkbox-custom {
+    color: white;
+    width: 1em;
+    height: 1em;
+    border: 2px inset #000;
+    border-radius: 0.25em;
+    margin: 0.25em;
+    cursor: pointer;
+}

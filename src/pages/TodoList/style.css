@@ -1,0 +1,132 @@
+.header {
+    text-align: center;
+    background-color: black;
+    padding: 37.5px;
+}
+
+.icon-loading {
+    padding: 1em;
+    position: absolute;
+    top: 5px;
+    left: 48%;
+    width: 150px;
+    height: 150px;
+}
+
+
+
+
+
+
+.main {
+    padding: 50px;
+    flex: 1 1 auto;
+}
+
+
+.header-count {
+    left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    
+}
+
+.date {
+    margin-left: 20%;
+    color: grey;
+    float: center;
+}
+
+.view-all {
+    display: flex;
+    padding: 10px;
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
+    height: 30px;
+}
+
+.date-task-one {
+    border: 6px solid lightgrey;
+    background-color: lightgrey;
+    margin: 15px;
+    display: flex;
+    list-style: none;
+}
+
+.title-date-task {
+    padding: 10px;
+    width: 15%;
+}
+
+.title-date {
+    text-align: right;
+    width: 30%;
+    padding: 10px;
+}
+
+
+.icon {
+    display: block;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(4, 195, 200)
+}
+
+.icon:hover {
+    color: red;
+}
+
+.icon-check {
+    cursor: pointer;
+    font-size: 25px;
+    color: green;
+}
+
+.icon-check:hover {
+    color: red;
+}
+
+li {
+    display: flex;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgb(39, 38, 38);
+    background-color: lightgrey;
+    background: lightgray;
+    
+}
+
+.basic-two {
+    display: flex;
+    justify-content: right;
+}
+
+
+.footer {
+    text-align: center;
+    background-color: lightgrey;
+    padding: 37.5px;
+
+}
+
+.icon-button {
+
+    position: absolute;
+    top: 88%;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.search {
+  width: 10%;
+  border: 3px solid #00B4CC;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  color: black;
+  font-size: 15px;
+}
+
