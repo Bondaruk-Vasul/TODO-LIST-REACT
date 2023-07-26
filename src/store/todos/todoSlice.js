@@ -19,6 +19,7 @@ export const todoSlice = createSlice({
   initialState: initialValue,
   reducers: {
     addTodo: (state, action) => {
+      // Нужно добавить поле 'done' --> которое по дефолтку false
       const newTodo = {
         id: uuid(),
         time: new Date().toLocaleDateString(),
@@ -39,13 +40,18 @@ export const todoSlice = createSlice({
         }
 
         return {
-          ...todo,
+          time: todo.time,
           ...action.payload,
         };
       });
 
       localStorage.setItem('todoList', JSON.stringify(state.todoList));
     },
+    markDone: (state, action) => {
+      // Тут надо чтобы пришел action, с айдишкой твоего todo
+      // и ты поменял в нем поле done на обратное, если было true --> поменять на false, если было false, поменять на true
+      return state;
+    }
   },
 });
 

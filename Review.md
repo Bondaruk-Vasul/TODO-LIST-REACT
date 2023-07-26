@@ -5,8 +5,8 @@
 
 ## Feature issues
 
-1. Form input should be cleared on add click, redirect should not happen immediately
-2. Fix todos counter
+1. Form input should be cleared on add click, redirect should not happen immediately (Done)
+2. Fix todos counter (Done)
 3. User must be able to mark any todo as done
 4. User should be able to sort by two dates (end date, creation date)
 5. List should have following filters: Deleted, Done, All, Todo

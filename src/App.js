@@ -8,13 +8,13 @@ import { TodoEdit } from './pages/TodoEdit';
 import './styles/main.css';
 
 function App() {
-    return (
-            <Routes>
-                <Route path='/' element={<TodoList />} />
-                <Route path='/create' element={<TodoCreate />} />
-                <Route path='/edit/:id' element={<TodoEdit />} />
-            </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<TodoList />} />
+      <Route path="/create" element={<TodoCreate />} />
+      <Route path="/edit/:id" element={<TodoEdit />} />
+    </Routes>
+  );
 }
 
 export default App;

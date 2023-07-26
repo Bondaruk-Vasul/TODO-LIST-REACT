@@ -14,7 +14,9 @@ export const TodoList = () => {
   const [search, setSearch] = useState('');
   const todoList = useSelector(selectTodoList);
 
-  console.log(search);
+  const searchTodoList = todoList.filter(item => {
+    return item.title.includes(search);
+  });
 
   return (
     <div className="wrapper">
@@ -35,7 +37,7 @@ export const TodoList = () => {
           <button className="view-all">All</button>
           <button className="view-all">Todo</button>
           <button className="view-all">Done</button>
-          <button className="view-all">Delete</button>
+          <button className="view-all">Deleted</button>
         </section>
 
         <section className="basic-three">
@@ -48,7 +50,7 @@ export const TodoList = () => {
         </section>
 
         <ul className="todo-list" id="todo-list">
-          {todoList.map(todo => (
+          {searchTodoList.map(todo => (
             <TodoItem todo={todo} key={todo.id} />
           ))}
         </ul>
