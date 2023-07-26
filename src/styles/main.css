@@ -62,7 +62,8 @@ body {
 }
 
 ul {
-  margin-left: -40px;
+  margin: 0;
+  padding: 0;
 }
 
 #deleted {

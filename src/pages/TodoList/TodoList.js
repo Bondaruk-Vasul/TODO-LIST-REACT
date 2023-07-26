@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppContent } from '../../components/AppContent';
+import { useSelector } from 'react-redux';
 
+import { selectTodoList } from '../../store/todos/selectors';
+import { TodoItem } from './TodoItem';
+import { TodosCount } from './TodosCount';
 import MiniLogo from '../../assets/img/MiniLogo.png';
 import Group from '../../assets/img/Group.png';
 
 import './style.css';
 
-
-
 export const TodoList = () => {
-    const [search, setSearch] = useState('');
-    const dispatch = useDispatch();
+  const [search, setSearch] = useState('');
+  const todoList = useSelector(selectTodoList);
 
-    console.log(search)    
+  console.log(search);
 
   return (
     <div className="wrapper">
-          <header className="header">
+      <header className="header">
         <img className="icon-loading" src={MiniLogo} alt="loading" />
       </header>
 
       <main className="main">
-              <section className="basic-two">
-                  <input className='search' placeholder='type to search' value={search} onChange={(e) => setSearch(e.target.value)}/>
-                  <button className='view-all'>All</button>
-                  <button className='view-all'>Todo</button>
-                  <button className='view-all'>Done</button>
-                   <button className='view-all'>Delete</button>
+        <TodosCount />
+
+        <section className="basic-two">
+          <input
+            className="search"
+            placeholder="type to search"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <button className="view-all">All</button>
+          <button className="view-all">Todo</button>
+          <button className="view-all">Done</button>
+          <button className="view-all">Delete</button>
         </section>
 
         <section className="basic-three">
@@ -38,18 +45,21 @@ export const TodoList = () => {
             <div className="title-date-task">Title</div>
             <div className="title-date">Description</div>
           </form>
-              </section>
-              <div>
-                  <AppContent />
-              </div>
+        </section>
+
+        <ul className="todo-list" id="todo-list">
+          {todoList.map(todo => (
+            <TodoItem todo={todo} key={todo.id} />
+          ))}
+        </ul>
       </main>
 
-          <div className="footer">
-              <NavLink to="/create" >
-                   <button id="go-to-create">
-                      <img className="icon-button" src={Group} alt="Plus" />
-                    </button>
-              </NavLink>
+      <div className="footer">
+        <NavLink to="/create">
+          <button id="go-to-create">
+            <img className="icon-button" src={Group} alt="Plus" />
+          </button>
+        </NavLink>
       </div>
     </div>
   );
